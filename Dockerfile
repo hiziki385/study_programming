@@ -15,5 +15,5 @@ ENV NEKO_BIND=:10000
 
 EXPOSE 10000
 
-# nekoを起動し、5秒後に「秘密のURL」を発行する
-CMD /usr/bin/neko & sleep 5 && cloudflared tunnel --url http://localhost:10000
+# 修正版の起動コマンド
+CMD /usr/bin/neko --bind :10000 & sleep 2 && cloudflared tunnel --url http://localhost:10000
