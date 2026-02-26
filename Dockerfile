@@ -19,6 +19,4 @@ EXPOSE 10000
 # 3. 起動コマンド
 # Renderが「ポートが開いた」と即座に認識できるようにしつつ、
 # 裏でフィルタ回避用のトンネル（Cloudflare）を立ち上げる
-CMD /usr/bin/neko --bind :10000 & \
-    sleep 3 && \
-    cloudflared tunnel --url http://localhost:10000
+CMD /usr/bin/neko serve --bind :10000 & sleep 5 && cloudflared tunnel --url http://localhost:10000
