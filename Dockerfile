@@ -1,1 +1,6 @@
-
+FROM vimagick/neko:chromium
+ENV NEKO_PORT=10000
+ENV NEKO_PASSWORD=123456
+ENV NEKO_BIND=:10000
+EXPOSE 10000
+CMD ["/usr/bin/neko"]
